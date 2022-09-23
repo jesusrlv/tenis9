@@ -1,26 +1,3 @@
-<?php
-session_start();
-
-// if (isset($_SESSION['usr']) && isset($_SESSION['pwd'])) {
-//   if($_SESSION['perfil']==3){
-
-//   }
-//   else{
-//     header('Location: prcd/sort.php');
-//     die();
-//   }
-  
-// } else {
-//   // En caso contrario redirigimos el visitante a otra página
-
-//   header('Location: prcd/sort.php');
-//   die();
-// }
-
-// variables de sesión
-
-?>
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -45,6 +22,7 @@ session_start();
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- ajax -->
     <script src="query/compra.js"></script>
+    <script src="js/script.js"></script>
 
     <!-- Bootstrap core CSS -->
     <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -55,7 +33,7 @@ session_start();
       /* On screens that are 992px wide or less, go from four columns to two columns */
       /* tablets, celular horizontal y otros dispositivos */
       @media screen and (max-width: 2000px) {
-        #selector1{
+        .selector1{
           width:50%;
         }
         /* #card_tamano{
@@ -80,7 +58,7 @@ session_start();
           #texto_titulo{
             font-size:18px;
           }
-          #selector1{
+          .selector1{
             width:100%;
           }
           /* #card_tamano{
@@ -188,14 +166,14 @@ session_start();
       
     <form id="form1">
       <!-- divisor -->
-      <div class="input-group mb-3" id="selector1">
+      <div class="input-group mb-3 selector1">
           <div class="input-group-text bg-primary text-light">
             <i class="bi bi-filter-circle-fill"></i>          
           </div>
-          <select class="form-select" aria-label="Example select with button addon" id="filter" name="filter">
-            <option selected>Selecciona el tipo de filtro ...</option>
+          <select class="form-select" aria-label="Example select with button addon" id="filter" name="filter" onchange="inputFiltro()" required>
+            <!-- <option selected>Selecciona el tipo de filtro ...</option> -->
 
-            <option value="">Sin categoría</option>
+            <option value="">Selecciona el tipo de filtro ...</option>
             <option value="1">a. Marca</option>
             <option value="2">b. Modelo</option>
             <option value="3">c. Color</option>
@@ -209,44 +187,44 @@ session_start();
    
     <!-- entran los dos filtros -->
     <!-- divisor -->
-    <div class="input-group mb-3" id="selector1">
+    <div class="input-group mb-3 selector1" id="marcaH" hidden>
           <div class="input-group-text bg-primary text-light">
           <i class="bi bi-search"></i>            
           </div>
-          <input type="text" class="form-control" placeholder="Marca..." aria-label="Username" aria-describedby="basic-addon1" name="marca">
+          <input type="text" class="form-control" placeholder="Marca..." aria-label="Username" aria-describedby="basic-addon1" id="marca">
         </div>
 
-    <div class="input-group mb-3" id="selector1">
+    <div class="input-group mb-3 selector1" id="modeloH" hidden>
           <div class="input-group-text bg-primary text-light">
           <i class="bi bi-search"></i>            
           </div>
-          <input type="text" class="form-control" placeholder="Modelo..." aria-label="Username" aria-describedby="basic-addon1" name="modelo">
+          <input type="text" class="form-control" placeholder="Modelo..." aria-label="Username" aria-describedby="basic-addon1" id="modelo">
         </div>
 
         <!-- divisor -->
-      <div class="input-group mb-3" id="selector1">
+      <div class="input-group mb-3 selector1" id="colorH" hidden>
           <div class="input-group-text bg-primary text-light">
           <i class="bi bi-search"></i>          
           </div>
-          <select class="form-select" aria-label="Example select with button addon" id="filtro2" name="color">
+          <select class="form-select" aria-label="Example select with button addon" id="color">
             <option selected>Color ...</option>
             <option value="">Sin categoría</option>
             
           </select>
         </div>
 
-        <div class="input-group mb-3" id="selector1">
+        <div class="input-group mb-3 selector1" id="materialH" hidden>
           <div class="input-group-text bg-primary text-light">
           <i class="bi bi-search"></i>            
           </div>
-          <input type="text" class="form-control" placeholder="Material..." aria-label="Username" aria-describedby="basic-addon1" name="material">
+          <input type="text" class="form-control" placeholder="Material..." aria-label="Username" aria-describedby="basic-addon1" id="material">
         </div>
 
-        <div class="input-group mb-3" id="selector1">
+        <div class="input-group mb-3 selector1" id="tallaH" hidden>
           <div class="input-group-text bg-primary text-light">
           <i class="bi bi-search"></i>          
           </div>
-          <select class="form-select" aria-label="Example select with button addon" id="filtro2" name="talla">
+          <select class="form-select" aria-label="Example select with button addon" id="talla">
             <option selected>Talla ...</option>
             <option value="">Sin categoría</option>
             
@@ -277,7 +255,7 @@ session_start();
   </div>
   
   
-    <span id="txtHint"><b>Aquí debe aparecer la información...</b></span>
+    <span id="txtHint"><b>Información...</b></span>
 
     <!-- Three columns of text below the carousel -->
     <!-- consultas productos -->
