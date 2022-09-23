@@ -12,6 +12,11 @@ function inputFiltro(){
         document.getElementById("materialH").hidden = true;
         document.getElementById("tallaH").hidden = true;
 
+        document.getElementById("modelo").required = false;
+        document.getElementById("color").required = false;
+        document.getElementById("material").required = false;
+        document.getElementById("talla").required = false;
+
     }
 
     else if(valor == 2){
@@ -23,6 +28,11 @@ function inputFiltro(){
         document.getElementById("materialH").hidden = true;
         document.getElementById("tallaH").hidden = true;
 
+        document.getElementById("marca").required = false;
+        document.getElementById("color").required = false;
+        document.getElementById("material").required = false;
+        document.getElementById("talla").required = false;
+
     }
 
     else if(valor == 3){
@@ -33,6 +43,11 @@ function inputFiltro(){
         document.getElementById("modeloH").hidden = true;
         document.getElementById("materialH").hidden = true;
         document.getElementById("tallaH").hidden = true;
+
+        document.getElementById("modelo").required = false;
+        document.getElementById("modelo").required = false;
+        document.getElementById("material").required = false;
+        document.getElementById("talla").required = false;
 
     }
 
@@ -46,6 +61,11 @@ function inputFiltro(){
         document.getElementById("colorH").hidden = true;
         document.getElementById("tallaH").hidden = true;
 
+        document.getElementById("modelo").required = false;
+        document.getElementById("color").required = false;
+        document.getElementById("color").required = false;
+        document.getElementById("talla").required = false;
+
     }
 
     else if(valor == 5){
@@ -56,6 +76,11 @@ function inputFiltro(){
         document.getElementById("modeloH").hidden = true;
         document.getElementById("colorH").hidden = true;
         document.getElementById("materialH").hidden = true;
+
+        document.getElementById("modelo").required = false;
+        document.getElementById("color").required = false;
+        document.getElementById("material").required = false;
+        document.getElementById("material").required = false;
 
     }
 }
